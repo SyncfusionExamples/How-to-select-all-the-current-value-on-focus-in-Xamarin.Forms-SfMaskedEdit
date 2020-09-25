@@ -97,7 +97,9 @@ In the Focused event of the SfMakedEditExt, call the SelectAll method to achieve
 
 ```
 
-Output:
+# Output: 
+
+![Selected value of SfMaskedEdit ar focus state](Output.gif)
 
 # See also
 
