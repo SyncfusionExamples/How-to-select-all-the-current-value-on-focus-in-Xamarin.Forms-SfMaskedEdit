@@ -10,7 +10,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(SfMaskedEditExt), typeof(CustomRenderer))]
+[assembly: ExportRenderer(typeof(ExtMaskedEdit), typeof(CustomRenderer))]
 namespace SfMaskedEdit_SelectAll.iOS
 {
     public class CustomRenderer : SfMaskedEditRenderer
@@ -26,6 +26,7 @@ namespace SfMaskedEdit_SelectAll.iOS
 
         private void Control_EditingDidBegin(object sender, EventArgs e)
         {
+            if((Element as ExtMaskedEdit).SelectAllOnFocus)
             Control.PerformSelector(new ObjCRuntime.Selector("selectAll"), null, 0.0f);
         }
     }

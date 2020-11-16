@@ -9,22 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms.Platform.UWP;
 
-[assembly: ExportRenderer(typeof(SfMaskedEditExt), typeof(CustomRenderer))]
+[assembly: ExportRenderer(typeof(ExtMaskedEdit), typeof(CustomRenderer))]
 namespace SfMaskedEdit_SelectAll.UWP
 {
     public class CustomRenderer : SfMaskedEditRenderer
     {
+        ExtMaskedEdit sfMaskedEditExt;
         protected override void OnElementChanged(ElementChangedEventArgs<Syncfusion.XForms.MaskedEdit.SfMaskedEdit> e)
         {
             base.OnElementChanged(e);
-            SfMaskedEditExt sfMaskedEditExt = e.NewElement as SfMaskedEditExt;
+            sfMaskedEditExt = e.NewElement as ExtMaskedEdit;
             sfMaskedEditExt.Focused += SfMaskedEditExt_Focused;
           
         }
 
         private void SfMaskedEditExt_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
-            if (Control != null)
+            if (Control != null && sfMaskedEditExt.SelectAllOnFocus)
             {
                 Control.SelectAll();
             }

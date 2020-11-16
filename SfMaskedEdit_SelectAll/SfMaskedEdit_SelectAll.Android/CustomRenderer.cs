@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -16,7 +17,7 @@ using Syncfusion.XForms.MaskedEdit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(SfMaskedEditExt),typeof(CustomRenderer))]
+[assembly: ExportRenderer(typeof(ExtMaskedEdit),typeof(CustomRenderer))]
 namespace SfMaskedEdit_SelectAll.Droid
 {
     public class CustomRenderer : SfMaskedEditRenderer
@@ -26,7 +27,16 @@ namespace SfMaskedEdit_SelectAll.Droid
             base.OnElementChanged(e);
             if(Control != null)
             {
-                Control.SetSelectAllOnFocus(true);
+                Control.SetSelectAllOnFocus((Element as ExtMaskedEdit).SelectAllOnFocus);
+            }
+        }
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+            if(e.PropertyName.Equals("SelectAllOnFocus"))
+            {
+                Control.SetSelectAllOnFocus((Element as ExtMaskedEdit).SelectAllOnFocus);
             }
         }
     }

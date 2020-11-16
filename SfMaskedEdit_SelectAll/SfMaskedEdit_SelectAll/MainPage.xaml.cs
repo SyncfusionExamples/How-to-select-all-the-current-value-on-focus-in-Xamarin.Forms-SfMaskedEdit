@@ -15,9 +15,4 @@ namespace SfMaskedEdit_SelectAll
             InitializeComponent();
         }
     }
-
-    public class SfMaskedEditExt : SfMaskedEdit
-    {
-        public bool SelectOnFocus { get; set; }
-    }
 }
