@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SfMaskedEdit_SelectAll"           
+             xmlns:local="clr-namespace:SfMaskedEdit_SelectAll"  
+             xmlns:maskedEdit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
              x:Class="SfMaskedEdit_SelectAll.MainPage">
-    <StackLayout>
-        <local:ExtMaskedEdit Mask="00000" 
+    <StackLayout  VerticalOptions="Center">
+        <maskedEdit:SfMaskedEdit Mask="00000" 
                            SelectAllOnFocus ="True"
                            Value="12345" 
-                           VerticalOptions="Center"/>
+                          />
     </StackLayout>
 </ContentPage>
