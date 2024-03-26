@@ -16,11 +16,11 @@ Refer to this Getting started documentation to create a simple SfImageEditor sam
                           />
 ```
 
-# Output: 
+## Output: 
 
 ![Selected value of SfMaskedEdit ar focus state](Output.gif)
 
-# See also
+## See also
 
 [What are mask types in SfMaskedEdit](https://help.syncfusion.com/xamarin/masked-entry/masktype)
 
